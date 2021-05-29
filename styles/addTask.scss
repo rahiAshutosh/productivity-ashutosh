@@ -1,0 +1,20 @@
+.add-task-container {
+  margin-top: 5%;
+  text-align: center;
+
+  input {
+    font-family: Lato;
+    font-size: 1.35rem;
+    padding: .65rem .85rem;
+    min-width: 30%;
+    border: none;
+    border-radius: .15rem;
+    box-shadow: 0px 1px 6px 2px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 0px 1px 6px 2px rgba(0,0,0,0.28);
+    -moz-box-shadow: 0px 1px 6px 2px rgba(0,0,0,0.28);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
