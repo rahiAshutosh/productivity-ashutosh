@@ -10,4 +10,6 @@ const TASKS = [
   { name: 'Task 3', category: 'complete' }
 ];
 
-export { COLUMNS, TASKS };
+const PUBLIC_PAGES = ['/login', '/signup'];
+
+export { COLUMNS, TASKS, PUBLIC_PAGES };

@@ -8,7 +8,7 @@ const TaskCard = ({
   onChangeCategory,
   onDelete
 }) => {
-  const { name, category } = task;
+  const { name, category } = task || {};
 
   const handleChangeCategory = (e) => {
     onChangeCategory(task?.name, e.target.value);

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { auth } from "../../utils/auth/config";
+import { PUBLIC_PAGES } from "../../utils/constants";
 
 const AuthContext = createContext();
 
@@ -13,6 +14,7 @@ const AuthProvider = ({
 }) => {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState();
+  const [allowRender, setAllowRender] = useState(false);
 
   useEffect(() => {
     const unSubscribe = auth.onAuthStateChanged(user => {
@@ -21,6 +23,10 @@ const AuthProvider = ({
     });
     return unSubscribe;
   }, []);
+
+  useEffect(() => {
+    setAllowRender(PUBLIC_PAGES.includes(router.pathname));    
+  }, [router.pathname]);
 
   const login = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password)
@@ -41,11 +47,9 @@ const AuthProvider = ({
     logout,
   };
 
-  const publicRoute = ['Login', 'Signup'].includes(children.type.name);
-
   return (
     <AuthContext.Provider value={value}>
-      {!currentUser && !publicRoute ? <></>: children}
+      {currentUser ? children : (allowRender ? children : null)}
     </AuthContext.Provider>
   );
 };

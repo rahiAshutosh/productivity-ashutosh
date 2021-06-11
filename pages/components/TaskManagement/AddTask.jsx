@@ -70,7 +70,7 @@ const AddTask = ({
         </div>
       </div>
       <Drawer
-        width={window.innerWidth > 767 ? "30vw" : "100vw"}
+        width="30vw"
         title="Add Task"
         placement="right"
         visible={showAddTask}
