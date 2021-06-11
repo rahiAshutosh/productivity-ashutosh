@@ -3,7 +3,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: Lato !important;
+}
+
+.blue-background {
   background: #0066FF !important;
+  min-height: 100vh !important;
 }
 
 * {

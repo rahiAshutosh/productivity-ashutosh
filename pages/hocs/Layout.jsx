@@ -7,7 +7,7 @@ const Layout = ({
   const { currentUser, logout } = useAuth();
 
   return (
-    <div className="app-container w-100">
+    <div className="app-container w-100 blue-background">
       <div className="nav-bar w-100">
         <h1>Productivity</h1>
         <div className="actions">          
